@@ -8,6 +8,12 @@
 import 'package:argfood/models/user_model.dart';
 import 'package:flutter/material.dart';
 
+class User{
+   int? id;
+   String username;
+   String password;
+   User({required this.username,required this.password,this.id});
+}
 void main() {
   runApp(MyApp());
 }
