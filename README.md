@@ -56,5 +56,10 @@ Flutter Local Database: [Flutter Local Database Using sqfLite](https://www.youtu
 
 Flutter Local Database: [Flutter Local Database Github](https://github.com/yehya-qassim/local_database)
 
+## دوره ی آموزشی
+
+میرسیم به مرحله ای که دیگه لازمه یک دوره کامل همراه یک پروژه عملی انجام بشه. به نظرم دوره عماد قاسم پور از آکادمی welearn میتونه برای شروع مناسب باشه. این دوره کاملا رایگانه.
+
+Welearn Flutter Course: [Flutter and Dart from scratch]https://welearn.site/course/flutter-video-tutorial/
 
 
