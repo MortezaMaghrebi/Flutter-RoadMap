@@ -47,3 +47,6 @@ Simple Login Page: [Documents/SimpleLoginPage.md](Documents/SimpleLoginPage.md)
 قبل از یادگیری دیتابیس در فلاتر لازمه که با یک مفهوم به نام Future آشنا بشین، فیوچر برای زمانی استفاده میشه که دریافت یک سری اطلاعات مدتی زمان میبره و شما نمی‌خواهید برنامه تون تا زمانی که اطلاعات در دسترس نیست منتظر بمونه، در عوض میخواید که از یک عملیات غیر همزمان برای دریافت اطلاعات و ادامه اجرای کد در حین انجام این فرآیند استفاده کنید.
 
 Futures In Flutter: [Documents/FuturesInFlutter.md](Documents/FuturesInFlutter.md)
+
+در مرحله ی بعدی برای یادگیری دیتابیس پیشنهاد میکنم این ویدیو رو ببینید:
+Flututer Local Datanase [Flutter Local Database Using sqfLite](https://www.youtube.com/watch?v=q8UXj-44dk8)
