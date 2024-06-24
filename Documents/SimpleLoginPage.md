@@ -149,7 +149,7 @@ if you want to use a local image instead of a network image follow the following
 
 - Create a new folder named `assets` inside your project directory and create a new folder named `images` inside the `assets` folder.
 
-**3. Copying the Image:**
+- **Copying the Image:**
 
 - Obtain the image you want to use (profile picture in this example).
 - Copy the image file and paste it inside the newly created `images` folder.
