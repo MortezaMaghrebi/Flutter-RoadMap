@@ -50,4 +50,11 @@ Futures In Flutter: [Documents/FuturesInFlutter.md](Documents/FuturesInFlutter.m
 
 در مرحله ی بعدی برای یادگیری دیتابیس پیشنهاد میکنم این ویدیو رو ببینید:
 
-Flututer Local Datanase [Flutter Local Database Using sqfLite](https://www.youtube.com/watch?v=q8UXj-44dk8)
+Flutter Local Database [Flutter Local Database Using sqfLite](https://www.youtube.com/watch?v=q8UXj-44dk8)
+
+همچینین سورس کد مربوط به ویدیو از این لینک قابل دانلود است:
+
+Flutter Local Database [Flutter Local Database Github](https://github.com/yehya-qassim/local_database)
+
+
+
