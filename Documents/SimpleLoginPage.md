@@ -139,7 +139,7 @@ class _MyAppState extends State<MyApp> {
 
 ```
 
-** Adding the Assets Folder:**
+**Adding the Assets Folder:**
 
 - Create a new folder named `assets` inside your project directory and create a new folder named `images` inside the `assets` folder.
 
