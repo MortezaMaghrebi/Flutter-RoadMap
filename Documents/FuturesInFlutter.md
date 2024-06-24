@@ -1,68 +1,68 @@
-## درک مفهوم Future در Flutter
+## Understanding Futures in Flutter
 
-### مقدمه
+### Introduction
 
-در برنامه‌نویسی Flutter، Future یک شیء خاص است که برای مدیریت عملیات غیرهمزمان، مانند خواندن داده‌ها از شبکه یا انجام محاسبات سنگین، استفاده می‌شود.
+In Flutter programming, a Future is a special object used to manage asynchronous operations, such as fetching data from the network or performing heavy computations.
 
-### مفهوم کلیدی
+### Key Concept
 
-فرض کنید در حال توسعه یک برنامه Flutter هستید که اطلاعات آب و هوا را از یک API وب دریافت می‌کند. دریافت این اطلاعات ممکن است کمی طول بکشد، زیرا شامل برقراری اتصال به شبکه، ارسال درخواست و دریافت پاسخ است.
+Imagine you're developing a Flutter app that retrieves weather information from a web API. Fetching this data might take a while as it involves establishing a network connection, sending a request, and receiving a response.
 
-در این حالت، نمی‌خواهید برنامه شما تا زمانی که اطلاعات آب و هوا در دسترس نباشد، منتظر بماند. در عوض، می‌خواهید از یک عملیات غیرهمزمان برای دریافت اطلاعات و ادامه اجرای کد برنامه خود در حین انجام این فرآیند استفاده کنید.
+In this scenario, you wouldn't want your app to freeze and wait until the weather data is available. Instead, you want to use an asynchronous operation to fetch the data and continue executing your app's code while this process is happening.
 
-### نقش Future
+### The Role of Future
 
-در اینجا، Future به کمک شما می‌آید. Future یک شیء را نشان می‌دهد که در نهایت مقداری را در آینده ارائه می‌دهد.
+This is where Future comes in. A Future represents an object that will eventually provide a value in the future.
 
-### نحوه استفاده از Future
+### How to Use Future
 
-#### 1. ایجاد Future
+#### 1. Create a Future
 
-* می‌توانید با استفاده از کلمه کلیدی `async` و تابع `Future.delayed()` یا با استفاده از توابع دیگر مانند `HttpClient.get()` یا `Future.value()`, یک شیء Future ایجاد کنید.
+* You can create a Future object using the `async` keyword and the `Future.delayed()` function or by using other functions like `HttpClient.get()` or `Future.value()`.
 
-#### 2. استفاده از `await`
+#### 2. Use `await`
 
-* برای انتظار تا زمانی که یک Future مقداری را برگرداند، از کلمه کلیدی `await` قبل از عبارت Future استفاده کنید.
-* `await` باعث می‌شود اجرای کد برنامه شما تا زمانی که مقدار Future در دسترس نباشد، متوقف شود.
+* To wait until a Future returns a value, use the `await` keyword before the Future expression.
+* `await` will pause the execution of your app's code until the Future's value is available.
 
-#### 3. دسترسی به مقدار
+#### 3. Access the Value
 
-* پس از اینکه `await` با موفقیت اجرا شد، می‌توانید به مقداری که Future برگردانده است، با استفاده از علامت‌گذاری `.then()` یا `async/await` دسترسی پیدا کنید.
+* Once `await` has successfully executed, you can access the value returned by the Future using the `.then()` or `async/await` syntax.
 
-### مثال
+### Example
 
 ```dart
 Future<String> fetchData() async {
-  // شبیه سازی دریافت داده ها از API
+  // Simulate fetching data from API
   await Future.delayed(const Duration(seconds: 2));
-  return 'داده ها دریافت شد!';
+  return 'Data fetched!';
 }
 
 void main() async {
   final data = await fetchData();
-  print(data); // 'داده ها دریافت شد!'
+  print(data); // 'Data fetched!'
 }
 ```
 
-### مزایای استفاده از Future
+### Benefits of Using Future
 
-* **غیرهمزمانی**: Future به شما امکان می‌دهد عملیات را بدون مسدود کردن رابط کاربری برنامه خود به طور همزمان اجرا کنید.
-* **خوانایی**: کد شما را خواناتر و قابل درک‌تر می‌کند، زیرا می‌توانید به طور واضح مراحل غیرهمزمان را مشخص کنید.
-* **قابلیت ترکیب**: Future ها را می‌توان با استفاده از توابعی مانند `Future.then()`, `Future.whenComplete()` و `Future.wait()` به راحتی با هم ترکیب کرد.
+* **Asynchrony**: Future allows you to execute operations concurrently without blocking your app's UI.
+* **Readability**: Makes your code more readable and understandable as you can clearly define asynchronous steps.
+* **Composability**: Futures can be easily combined using functions like `Future.then()`, `Future.whenComplete()`, and `Future.wait()`.
 
-### موارد استفاده از Future
+### Use Cases of Future
 
-* **شبکه**: دریافت داده‌ها از API، آپلود فایل‌ها
-* **ذخیره‌سازی**: خواندن و نوشتن داده‌ها در پایگاه داده، ذخیره‌سازی در حافظه محلی
-* **محاسبات**: انجام محاسبات سنگین که ممکن است زمان‌بر باشد
-* **انیمیشن**: ایجاد انیمیشن‌های روان و پاسخگو
+* **Networking**: Fetching data from APIs, uploading files
+* **Storage**: Reading and writing data to a database, local storage
+* **Computations**: Performing heavy computations that might be time-consuming
+* **Animations**: Creating smooth and responsive animations
 
-### نکات تکمیلی
+### Additional Tips
 
-* برای مدیریت خطاها در عملیات غیرهمزمان، می‌توانید از بلوک‌های `try-catch` در داخل توابع `async` استفاده کنید.
-* کتابخانه `dart:async` توابع و کلاس‌های مختلفی را برای کار با Future ها ارائه می‌دهد.
-* برای درک عمیق‌تر مفهوم Future و نحوه استفاده از آن در Flutter، می‌توانید به مستندات رسمی Flutter مراجعه کنید: [https://dart.dev/libraries/async/async-await](https://dart.dev/libraries/async/async-await)
+* To handle errors in asynchronous operations, you can use `try-catch` blocks within `async` functions.
+* The `dart:async` library provides various functions and classes for working with Futures.
+* For a deeper understanding of the Future concept and how to use it in Flutter, refer to the official Flutter documentation: [https://dart.dev/libraries/async/async-await](https://dart.dev/libraries/async/async-await)
 
-### جمع‌بندی
+### Conclusion
 
-Future یک ابزار قدرتمند در Flutter است که به شما امکان می‌دهد عملیات غیرهمزمان را به طور کارآمد و خوانا مدیریت کنید. با استفاده از Future ها، می‌توانید برنامه‌های Flutter با رابط کاربری روان و پاسخگو بسازید که بدون تاخیر قابل توجهی، وظایف مختلف را انجام می‌دهند.
+Future is a powerful tool in Flutter that enables you to manage asynchronous operations efficiently and readably. By utilizing Futures, you can build Flutter apps with a responsive UI that can handle various tasks without significant delays.
