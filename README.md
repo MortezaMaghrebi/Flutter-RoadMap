@@ -38,3 +38,6 @@ Flutter Books: https://github.com/imrishuroy/Flutter/tree/master
 
 Sum Two Numbers: [Documents/SumTwoNumbers.md](Documents/SumTwoNumbers.md)
 
+حالا اومدم یکم تغییرات توی کد دادم و اونو تبدیل کردم به یک صفحه لاگین و ثبت نام که خیلی ساده کاربرها رو توی یک لیست ذخیره میکنه و از توی لیست هم میبینه:
+
+SimpleLoginPage: [Documents/SimpleLoginPage.md](Documents/SimpleLoginPage.md)
