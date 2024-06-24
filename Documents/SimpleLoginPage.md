@@ -144,6 +144,7 @@ class _MyAppState extends State<MyApp> {
 ```
 
 **Adding the Assets Folder:**
+
 if you want to use a local image instead of network image follow the following rule, else skip to the breakdown of the code.
 
 - Create a new folder named `assets` inside your project directory and create a new folder named `images` inside the `assets` folder.
