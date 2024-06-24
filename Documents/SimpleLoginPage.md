@@ -5,14 +5,13 @@
 **Dart**
 
 ```dart
-import 'package:argfood/models/user_model.dart';
 import 'package:flutter/material.dart';
 
-class User{
-   int? id;
-   String username;
-   String password;
-   User({required this.username,required this.password,this.id});
+class User {
+  int? id;
+  String username;
+  String password;
+  User({required this.username, required this.password, this.id});
 }
 
 void main() {
@@ -81,62 +80,67 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          title: const Text('Login Page'),
+          title: const Text('Login Pages'),
+          backgroundColor: Colors.green,
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            children: [
-              const SizedBox(height: 20.0),
-              CircleAvatar(
-                radius: 120.0,
-                backgroundColor: Colors.transparent,
-                backgroundImage: AssetImage("../assets/images/profile.png"),
-              ),
-              const SizedBox(height: 10.0),
-              TextField(
-                controller: userNameController,
-                keyboardType: TextInputType.number,
-                decoration: const InputDecoration(
-                  labelText: 'User Name',
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              children: [
+                const SizedBox(height: 20.0),
+                CircleAvatar(
+                  radius: 120.0,
+                  backgroundColor: Colors.transparent,
+                  backgroundImage: NetworkImage(
+                    'https://picsum.photos/300/300',
+                  ),
                 ),
-              ),
-              const SizedBox(height: 10.0),
-              TextField(
-                controller: passwordController,
-                keyboardType: TextInputType.number,
-                decoration: const InputDecoration(
-                  labelText: 'Password',
+                const SizedBox(height: 10.0),
+                TextField(
+                  controller: userNameController,
+                  keyboardType: TextInputType.text,
+                  decoration: const InputDecoration(
+                    labelText: 'User Name',
+                  ),
                 ),
-              ),
-              const SizedBox(height: 20.0),
-              SizedBox(
-                width: 150,
-                height: 40.0,
-                child: ElevatedButton(
-                  onPressed: Login,
-                  child: const Text('Login'),
+                const SizedBox(height: 10.0),
+                TextField(
+                  controller: passwordController,
+                  keyboardType: TextInputType.visiblePassword,
+                  decoration: const InputDecoration(
+                    labelText: 'Password',
+                  ),
                 ),
-              ),
-              const SizedBox(height: 10.0),
-              TextButton(
-                onPressed: SignUp,
-                child: Text('Sign Up'),
-              ),
-              const SizedBox(height: 40.0),
-              Text(
-                '$loginResult',
-                style: TextStyle(fontSize: 14.0, color: loginInfoColor),
-              ),
-            ],
+                const SizedBox(height: 20.0),
+                SizedBox(
+                  width: 150,
+                  height: 40.0,
+                  child: ElevatedButton(
+                    onPressed: Login,
+                    child: const Text('Login'),
+                  ),
+                ),
+                const SizedBox(height: 10.0),
+                TextButton(
+                  onPressed: SignUp,
+                  child: Text('Sign Up Now'),
+                ),
+                const SizedBox(height: 40.0),
+                Text(
+                  '$loginResult',
+                  style: TextStyle(fontSize: 14.0, color: loginInfoColor),
+                ),
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 }
-
 ```
 
 **Adding the Assets Folder:**
